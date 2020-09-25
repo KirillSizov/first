@@ -1,0 +1,40 @@
+<!-- Сообщаем браузеру как стоит обрабатывать этй страницу -->
+<!DOCTYPE html>
+{% load static %}
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+    <!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+    <head>
+        <!-- Заголовок страницы в браузере -->
+        <title>notes-block</title>
+        <!-- Подключаем CSS -->
+        <link rel="stylesheet" href="{% static 'css/notes-block.css' %}">
+        <!-- Кодировка страницы -->
+        <meta charset="utf-8">
+        <script src="https://use.fontawesome.com/efd31cb4cf.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <!-- Отображает тело страницы -->
+    <body>
+        <div class="container">
+            <div class="notes__title">
+                <h1>Заметки</h1>
+                <h2>О выживании в мире технологий и творящемся вокруг киберпанке</h2>
+            </div>
+                <div class="notes__body">
+                    <div class="notes__row">
+                        {% for posts in vas3k_posts %}
+                            <div class="notes__columns">
+                                <div class="notes_blocks">
+                                    <a href="#" class="notes_block" style="background: no-repeat top/120% 70% url({{ posts.picture.url }});">
+                                        <span class="notes_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                        <span class="notes_block__info">{{ posts.tittle }}.</span>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+        </div>
+    </body>
+</html>

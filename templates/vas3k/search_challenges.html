@@ -1,0 +1,41 @@
+<!-- Сообщаем браузеру как стоит обрабатывать этй страницу -->
+<!DOCTYPE html>
+{% load static %}
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+    <!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+    <head>
+        <!-- Заголовок страницы в браузере -->
+        <title>search_chalenges</title>
+        <!-- Подключаем CSS -->
+        <link rel="stylesheet" href="{% static 'css/search_chalenges.css' %}">
+        <!-- Кодировка страницы -->
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src="https://use.fontawesome.com/efd31cb4cf.js"></script>
+
+    </head>
+    <!-- Отображает тело страницы -->
+    <body>
+        <div class="search_challenges">
+            <div class="search_challenges__title">
+                <a href="#" class="search_challenges__header"><h1>Поисковые челленжи</h1></a>
+            </div>
+            <div class="search_challenges__row">
+                {% for posts in vas3k_posts %}
+                    <div class="search_challenges_blocks">
+                        <a href="#" class="search_challenges_block" style="background: no-repeat center/105% url({{ posts.picture.url }});">
+                            <span class="search_challenges_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                            <span class="search_challenges_block__info">
+                                <span class="search_challenges_block__title">
+                                {{ posts.tittle }}
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </body>
+</html>

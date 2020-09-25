@@ -1,0 +1,27 @@
+<!-- Сообщаем браузеру как стоит обрабатывать этй страницу -->
+<!DOCTYPE html>
+{% load static %}
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+    <!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+    <head>
+        <!-- Заголовок страницы в браузере -->
+        <title>vas3k_copy</title>
+        <!-- Подключаем CSS -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- Кодировка страницы -->
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src="https://use.fontawesome.com/efd31cb4cf.js"></script>
+
+    </head>
+    <!-- Отображает тело страницы -->
+<body>
+    {% include 'include/header.html' %}
+    {% block content %}
+
+    {% endblock content %}
+
+    {% include 'include/footer.html' %}
+</body>

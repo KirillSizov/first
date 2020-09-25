@@ -1,0 +1,121 @@
+{% extends 'vas3k/base.html' %}
+    {% block content %}
+        <div class="content">
+            <div class="container">
+                <div class="content__title">
+                    <a href="#" class="content__title_block">
+                        <span class="title__block_views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                        <span class="title__block_info">No Code</span>
+                    </a>
+                </div>
+                <div class="stories">
+                    <div class="stories__row">
+                        {% for posts in post_list %}
+                            <div class="stories__columns">
+                                <div class="stories_blocks">
+                                    <a href="{{ posts.get_absolute_url }}" class="stories_block" style="background: no-repeat center/105% url({{ posts.picture.url }});">
+                                        <span class="stories_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                        <span class="stories_block__info">
+                                            <span class="stories_block__title">
+                                                {{ posts.tittle }}
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="notes">
+                    <div class="notes__title">
+                        <a href="#" class="notes__notes"><h1>Заметки</h1></a>
+                        <h2>О выживании в мире технологий и творящемся вокруг киберпанке</h2>
+                    </div>
+                        {% include 'vas3k/Notes.html' %}
+                    </div>
+                <div class="travels">
+                    <div class="travels__title">
+                        Отвратительные путешествия
+                    </div>
+                    {% include 'vas3k/travels.html' %}
+                </div>
+                <div class="imperishable">
+                    <div class="imperishable__title">
+                            Нетленки
+                    </div>
+                    <div class="imperishable__row">
+                        <div class="imperishable__columns">
+                            <div class="imperishable_blocks">
+                                <a href="#" class="imperishable_block imperishable_block_1">
+                                    <span class="imperishable_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="imperishable_block__info">
+                                        <span class="imperishable_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="imperishable_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="imperishable__columns">
+                            <div class="imperishable_blocks">
+                                <a href="#" class="imperishable_block imperishable_block_2">
+                                    <span class="imperishable_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="imperishable_block__info">
+                                        <span class="imperishable_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="imperishable_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="imperishable__columns">
+                            <div class="imperishable_blocks">
+                                <a href="#" class="imperishable_block imperishable_block_3">
+                                    <span class="imperishable_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="imperishable_block__info">
+                                        <span class="imperishable_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="imperishable_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="imperishable__columns">
+                                <div class="imperishable_blocks">
+                                    <a href="#" class="imperishable_block imperishable_block_4">
+                                        <span class="imperishable_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                            <span class="imperishable_block__info">
+                                                <span class="imperishable_block__title">
+                                                Lorem ipsum dolor sit amet, consectetur.
+                                            </span>
+                                            <div class="clear10"></div>
+                                            <span class="imperishable_block__subtitle">
+                                                Lorem ipsum dolor sit amet, consectetur.
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search_challenges">
+                    <div class="search_challenges__title">
+                        <a href="#" class="search_challenges__header"><h1>Поисковые челленжи</h1></a>
+                    </div>
+                    {% include 'vas3k/challenge.html' %}
+                </div>
+            </div>
+        </div>
+    {% endblock content %}

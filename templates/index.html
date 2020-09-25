@@ -1,0 +1,372 @@
+<!-- Сообщаем браузеру как стоит обрабатывать этй страницу -->
+<!DOCTYPE html>
+{% load static %}
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+    <!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+    <head>
+        <!-- Заголовок страницы в браузере -->
+        <title>vas3k_copy</title>
+        <!-- Подключаем CSS -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <!-- Кодировка страницы -->
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src="https://use.fontawesome.com/efd31cb4cf.js"></script>
+
+    </head>
+    <!-- Отображает тело страницы -->
+    <body>
+        <div class="header">
+            <div class="header__row">
+                <div class="header__menu">
+                    <ul class="header__list">
+                        <li class="menu__item menu__image"><a href="#">Вастрик</a></li>
+                        <li class="menu__item"><a href="#">Блог</a></li>
+                        <li class="menu__item"><a href="#">Мир</a></li>
+                        <li class="menu__item"><a href="#">Донат</a></li>
+                        <li class="menu__item"><a href="#">Клуб</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="contacts">
+            <div class="container">
+                <div class="contacts__row">
+                    <a href="https://t.me/vas3k_channel" target="_blank" class="1">
+                        <i class="fa fa-telegram" aria-hidden="true"></i>Телеграм-канал</a>
+                    <a href="https://twitter.com/vas3k" target="_blank" class="2">
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        Твиттер</a>
+                    <a href="https://www.patreon.com/vas3k" target="_blank" class="3">
+                        <i class='fab fa-patreon' aria-hidden="true"></i>
+                        Патреон</a>
+                    <a href="https://vas3k.ru/rss/" target="_blank" class="4">
+                        <i class="fas fa-rss-square" aria-hidden="true"></i>
+                        RSS</a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="container">
+                <div class="content__title">
+                    <a href="#" class="content__title_block">
+                        <span class="title__block_views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                        <span class="title__block_info">No Code</span>
+                    </a>
+                </div>
+                <div class="stories">
+                    <div class="stories__row">
+                        {% for posts in post_list|slice:":3" %}
+                            {% if posts.test == 2 %}
+                            <div class="stories__columns">
+                                <div class="stories_blocks">
+                                    <a href="{{ posts.get_absolute_url }}" class="stories_block" style="background: no-repeat center/105% url({{ posts.picture.url }});">
+                                        <span class="stories_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                        <span class="stories_block__info">
+                                            <span class="stories_block__title">
+                                                {{ posts.tittle }}
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="notes">
+                    <div class="notes__title">
+                        <a href="#" class="notes__notes"><h1>Заметки</h1></a>
+                        <h2>О выживании в мире технологий и творящемся вокруг киберпанке</h2>
+                    </div>
+                    <div class="stories">
+                    <div class="stories__row">
+                        {% for posts in post_list %}
+                            {% if posts.test == 1 %}
+                            <div class="stories__columns">
+                                <div class="stories_blocks">
+                                    <a href="{{ posts.get_absolute_url }}" class="stories_block" style="background: no-repeat center/105% url({{ posts.picture.url }});">
+                                        <span class="stories_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                        <span class="stories_block__info">
+                                            <span class="stories_block__title">
+                                                {{ posts.tittle }}
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="travels">
+                    <div class="travels__title">
+                        Отвратительные путешествия
+                    </div>
+                    <div class="travels__row">
+                        <div class="travels__columns">
+                            <div class="travels_blocks">
+                                <a href="#" class="travels_block travels_block_1">
+                                    <span class="travels_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="travels_block__info">
+                                        <span class="travels_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="travels_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="travels__columns">
+                            <div class="travels_blocks">
+                                <a href="#" class="travels_block travels_block_2">
+                                    <span class="travels_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="travels_block__info">
+                                        <span class="travels_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="travels_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="travels__columns">
+                            <div class="travels_blocks">
+                                <a href="#" class="travels_block travels_block_3">
+                                    <span class="travels_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="travels_block__info">
+                                        <span class="travels_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="travels_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="travels__columns">
+                                <div class="travels_blocks">
+                                    <a href="#" class="travels_block travels_block_4">
+                                        <span class="travels_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                            <span class="travels_block__info">
+                                                <span class="travels_block__title">
+                                                Lorem ipsum dolor sit amet, consectetur.
+                                            </span>
+                                            <div class="clear10"></div>
+                                            <span class="travels_block__subtitle">
+                                                Lorem ipsum dolor sit amet, consectetur.
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                        </div>
+                        <div class="travels__columns">
+                                <div class="travels_blocks">
+                                    <a href="#" class="travels_block travels_block_5">
+                                        <span class="travels_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                            <span class="travels_block__info">
+                                                <span class="travels_block__title">
+                                                Lorem ipsum dolor sit amet, consectetur.
+                                            </span>
+                                            <div class="clear10"></div>
+                                            <span class="travels_block__subtitle">
+                                                Lorem ipsum dolor sit amet, consectetur.
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                        </div>
+                        <div class="travels__columns">
+                            <div class="travels_blocks">
+                                <a href="#" class="travels_block travels_block_6">
+                                    <span class="travels_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="travels_block__info">
+                                        <span class="travels_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="travels_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="travels__columns">
+                            <div class="travels_blocks">
+                                <a href="#" class="travels_block travels_block_7">
+                                    <span class="travels_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="travels_block__info">
+                                        <span class="travels_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="travels_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="travels__columns">
+                            <div class="travels_blocks">
+                                <a href="#" class="travels_block travels_block_8">
+                                    <span class="travels_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="travels_block__info">
+                                        <span class="travels_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="travels_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius saepe, asperiores commodi. Consequuntur delectus numquam fuga cum dicta officiis. Quisquam consectetur laudantium voluptates minus maiores iure doloribus sequi asperiores neque.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="imperishable">
+                    <div class="imperishable__title">
+                            Нетленки
+                    </div>
+                    <div class="imperishable__row">
+                        <div class="imperishable__columns">
+                            <div class="imperishable_blocks">
+                                <a href="#" class="imperishable_block imperishable_block_1">
+                                    <span class="imperishable_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="imperishable_block__info">
+                                        <span class="imperishable_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="imperishable_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="imperishable__columns">
+                            <div class="imperishable_blocks">
+                                <a href="#" class="imperishable_block imperishable_block_2">
+                                    <span class="imperishable_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="imperishable_block__info">
+                                        <span class="imperishable_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="imperishable_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="imperishable__columns">
+                            <div class="imperishable_blocks">
+                                <a href="#" class="imperishable_block imperishable_block_3">
+                                    <span class="imperishable_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                    <span class="imperishable_block__info">
+                                        <span class="imperishable_block__title">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                        <div class="clear10"></div>
+                                        <span class="imperishable_block__subtitle">
+                                            Lorem ipsum dolor sit amet, consectetur.
+                                        </span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="imperishable__columns">
+                                <div class="imperishable_blocks">
+                                    <a href="#" class="imperishable_block imperishable_block_4">
+                                        <span class="imperishable_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                            <span class="imperishable_block__info">
+                                                <span class="imperishable_block__title">
+                                                Lorem ipsum dolor sit amet, consectetur.
+                                            </span>
+                                            <div class="clear10"></div>
+                                            <span class="imperishable_block__subtitle">
+                                                Lorem ipsum dolor sit amet, consectetur.
+                                            </span>
+                                        </span>
+                                    </a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search_challenges">
+                    <div class="search_challenges__title">
+                        <a href="#" class="search_challenges__header"><h1>Поисковые челленжи</h1></a>
+                    </div>
+                    <div class="search_challenges__row">
+                        <div class="search_challenges_blocks">
+                            <a href="#" class="search_challenges_block search_challenges_block_1">
+                                <span class="search_challenges_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                <span class="search_challenges_block__info">
+                                    <span class="search_challenges_block__title">
+                                    Lorem ipsum dolor sit amet, consectetur.
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="search_challenges_blocks">
+                            <a href="#" class="search_challenges_block search_challenges_block_2">
+                                <span class="search_challenges_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                <span class="search_challenges_block__info">
+                                    <span class="search_challenges_block__title">
+                                    Lorem ipsum dolor sit amet, consectetur.
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="search_challenges_blocks">
+                            <a href="#" class="search_challenges_block search_challenges_block_3">
+                                <span class="search_challenges_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                                <span class="search_challenges_block__info">
+                                    <span class="search_challenges_block__title">
+                                    Lorem ipsum dolor sit amet, consectetur.
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="footer__contacts">
+                    <span>Для связи →</span>
+                    <a href="#">
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        me@vas3k.ru
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-telegram" aria-hidden="true">
+                        </i>Телеграм-бот
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        Твиттер
+                    </a>
+                </div>
+                <div class="footer__text">
+                    Пожалуйста, ставьте ссылку на vas3k.ru при использовании материалов и цитировании. Перепечатка постов возможна, но с разрешения. Пишите на почту.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

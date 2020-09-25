@@ -1,0 +1,19 @@
+<div class="stories">
+    <div class="stories__row">
+        {% for Challenge in view.get_challenge %}
+                <div class="stories__columns">
+                    <div class="stories_blocks">
+                        <a href="{{ Challenge.get_absolute_url }}" class="stories_block" style="background: no-repeat center/105% url({{ Challenge.picture.url }});">
+                            <span class="stories_block__views"><i class="fa fa-eye" aria-hidden="true"></i>73.1K</span>
+                            <span class="stories_block__info">
+                                <span class="stories_block__title">
+                                    {{ Challenge.subtittle }}
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+</div>
+

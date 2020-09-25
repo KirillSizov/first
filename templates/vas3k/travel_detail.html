@@ -1,0 +1,70 @@
+<!-- Сообщаем браузеру как стоит обрабатывать этй страницу -->
+<!DOCTYPE html>
+{% load static %}
+<!-- Оболочка документа, указываем язык содержимого -->
+<html lang="ru">
+    <!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
+    <head>
+        <!-- Заголовок страницы в браузере -->
+        <title>blog</title>
+        <!-- Подключаем CSS -->
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <!-- Кодировка страницы -->
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src="https://use.fontawesome.com/efd31cb4cf.js"></script>
+
+    </head>
+    <!-- Отображает тело страницы -->
+    <body>
+        <div class="header">
+            <div class="header__row">
+                <div class="header__menu">
+                    <ul class="header__list">
+                        <li class="menu__item menu__image"><a href="#">Вастрик</a></li>
+                        <li class="menu__item"><a href="#">Блог</a></li>
+                        <li class="menu__item"><a href="#">Мир</a></li>
+                        <li class="menu__item"><a href="#">Донат</a></li>
+                        <li class="menu__item"><a href="#">Клуб</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="headline__row">
+                <div class="headline__test" style="background: no-repeat top/100% 100% url({{ travel.picture.url }})">
+                    <span class="headline__info_title"> {{ travel.tittle }} </span>
+                    <span class="headline__info_date">{{ travel.date }} :: {{ travel.text|wordcount }} слов</span>
+                </div>
+            </div>
+            <div class="post e-content">
+
+                    {{ travel.text|safe }}
+
+        </div>
+        <div class="footer">
+            <div class="container">
+                <div class="footer__contacts">
+                    <span>Для связи →</span>
+                    <a href="#">
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        me@vas3k.ru
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-telegram" aria-hidden="true">
+                        </i>Телеграм-бот
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                        Твиттер
+                    </a>
+                </div>
+                <div class="footer__text">
+                    Пожалуйста, ставьте ссылку на vas3k.ru при использовании материалов и цитировании. Перепечатка постов возможна, но с разрешения. Пишите на почту.
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
